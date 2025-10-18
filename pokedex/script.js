@@ -1,67 +1,95 @@
-const poke_container = document.getElementById("poke-container");
-const quantidade_pokemons = 150;
+const container_pokedex = document.getElementById("container-pokedex");
+const quantidade_pokemons = 1000;
+
+const tiposTraduzidos = {
+    fire: "fogo",
+    grass: "planta",
+    electric: "elétrico",
+    water: "água",
+    ground: "terrestre",
+    rock: "rocha",
+    fairy: "fada",
+    poison: "veneno",
+    bug: "inseto",
+    dragon: "dragão",
+    psychic: "psíquico",
+    flying: "voador",
+    fighting: "lutador",
+    normal: "normal",
+    steel: "metal",
+    ghost: "fantasma",
+    ice: "gelo",
+    dark: "sombrio",
+};
 
 const cores = {
-    fire: "#FDDFDF",
-    grass: "#DEFDE0",
-    electric: "#FCF7DE",
-    water: "#DEF3FD",
-    ground: "#f4e7da",
+    fire: "#fddfdf",
+    grass: "#defde0",
+    electric: "#fcf7de",
+    water: "#def3fd",
+    ground: "#fae7da",
     rock: "#d5d5d4",
     fairy: "#fceaff",
     poison: "#98d7a5",
     bug: "#f8d5a3",
     dragon: "#97b3e6",
     psychic: "#eaeda1",
-    flying: "#F5F5F5",
-    fighting: "#E6E0D4",
-    normal: "#F5F5F5",
+    flying: "#f5f5f5",
+    fighting: "#e6e0d4",
+    normal: "#f5f5f5",
+    steel: "#909090ff",
+    ghost: "#d5d5d5ff",
+    ice: "#d1e1feff",
+    dark: "#9d9d9dff",
 };
 
-const tipos_principais = Object.keys(cores);
+const tipos_principais = Object.keys(tiposTraduzidos);
 
-// Buscar todos os Pokémons
-const buscarPokemons = async () => {
-    for (let i = 1; i <= quantidade_pokemons; i++) {
-        await buscarPokemon(i);
-    }
-};
-
-// Buscar um Pokémon pelo ID
-const buscarPokemon = async (id) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    criarCartaPokemon(data);
-};
-
-// Criar o cartão do Pokémon
 const criarCartaPokemon = (pokemon) => {
-    const pokemonEl = document.createElement("div");
-    pokemonEl.classList.add("pokemon");
+    const pokemonElemento = document.createElement("div");
+    pokemonElemento.classList.add("pokemon");
 
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     const id = pokemon.id.toString().padStart(3, "0");
 
-    const tipos = pokemon.types.map((type) => type.type.name);
-    const tipo = tipos_principais.find((t) => tipos.indexOf(t) > -1);
-    const cor = cores[tipo];
+    const tiposDoPokemon = pokemon.types.map((tipo) => tipo.type.name);
 
-    pokemonEl.style.backgroundColor = cor;
+    const tipoPrincipal = tiposDoPokemon[0];
+    const cor = cores[tipoPrincipal];
+
+    const tiposDoPokemonTraduzidos = tiposDoPokemon
+        .map((tipo) => tiposTraduzidos[tipo])
+        .join(", ");
+
+    pokemonElemento.style.backgroundColor = cor;
 
     const htmlPokemon = `
-    <div class="img-container">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${nome}">
+    <div class="container-imagem">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${nome}" />
     </div>
-    <div class="info">
-        <span class="number">#${id}</span>
-        <h3 class="name">${nome}</h3>
-        <small class="type">Tipo: <span>${tipo}</span></small>
+    <div class="informacao">
+        <span class="numero">#${id}</span>
+        <h3 class="nome">${nome}</h3>
+        <small class="tipo">Tipo: <span>${tiposDoPokemonTraduzidos}</span></small>
     </div>
     `;
 
-    pokemonEl.innerHTML = htmlPokemon;
-    poke_container.appendChild(pokemonEl);
+    pokemonElemento.innerHTML = htmlPokemon;
+    container_pokedex.appendChild(pokemonElemento);
 };
+
+const buscarPokemon = async (id) => {
+    const endereco = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const resposta = await fetch(endereco);
+    const dados = await resposta.json();
+    console.log(dados);
+    criarCartaPokemon(dados);
+};
+
+async function buscarPokemons() {
+    for (let i = 1; i <= quantidade_pokemons; i++) {
+        await buscarPokemon(i);
+    }
+}
 
 buscarPokemons();

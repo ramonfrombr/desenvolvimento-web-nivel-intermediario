@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f1f5f8;
+    color: #102a42;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+h3 {
+    letter-spacing: 0.25rem;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+}
+
+.centro-secao {
+    width: 90vw;
+    max-width: 35rem;
+    margin: 8rem auto 0;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s linear;
+    padding: 2rem;
+}
+
+.centro-secao:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.alerta {
+    margin-bottom: 1rem;
+    height: 1.25rem;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+    letter-spacing: 0.25rem;
+    text-transform: capitalize;
+}
+
+.alerta-perigo {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.alerta-sucesso {
+    color: #155724;
+    background: #d4edda;
+}
+
+.formulario-compras h3 {
+    color: #063251;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.controle-formulario {
+    display: flex;
+    justify-content: center;
+}
+
+#item-compra {
+    padding: 0.25rem 0 0.25rem 1rem;
+    background: #f1f5f8;
+    border: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.4rem;
+    font-size: 1rem;
+    flex: 1;
+    color: #617d98;
+}
+
+#item-compra:placeholder {
+    color: #617d98;
+}
+
+.botao-enviar {
+    background: #a5d5f8;
+    border: none;
+    flex: 0 0 5rem;
+    display: grid;
+    align-items: center;
+    padding: 0.25rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    font-size: 0.85rem;
+}
+
+.botao-enviar:hover {
+    background: #49a6e9;
+    color: #fff;
+}
+
+.container-compras {
+    margin-top: 2rem;
+    transition: all 0.3s linear;
+    visibility: hidden;
+}
+
+.mostrar-container {
+    visibility: visible;
+}
+
+.item-compra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s linear;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+}
+
+.item-compra:hover {
+    color: #617a98;
+    background: #f1f5f8;
+}
+
+.titulo-item {
+    margin-bottom: 0;
+    color: #102a42;
+    letter-spacing: 2px;
+    transition: all 0.3s linear;
+}
+
+.botao-editar,
+.botao-excluir {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0 0.15rem;
+    transition: all 0.3s linear;
+}
+
+.botao-editar {
+    color: #6be675;
+}
+
+.botao-editar:hover {
+    color: #25bb32;
+}
+
+.botao-excluir {
+    color: #e66b6b;
+}
+
+.botao-excluir:hover {
+    color: #bb2525;
+}
+
+.botao-limpar {
+    text-transform: capitalize;
+    width: 10rem;
+    height: 1.5rem;
+    display: grid;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #e66b6b;
+    margin: 1.25rem auto 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.botao-limpar:hover {
+    color: #bb2525;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista de Compras</title>
+        <link rel="stylesheet" href="estilo.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <section class="centro-secao">
+            <form class="formulario-compras">
+                <p class="alerta"></p>
+                <h3>lista de compras</h3>
+                <div class="controle-formulario">
+                    <input
+                        type="text"
+                        id="item-compra"
+                        placeholder="ex: ovos"
+                    />
+                    <button type="submit" class="botao-enviar">
+                        adicionar
+                    </button>
+                </div>
+            </form>
+
+            <div class="container-compras">
+                <div class="lista-compras"></div>
+                <button class="botao-limpar">limpar itens</button>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
