@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #000;
+    --cor-secundaria: #fff;
+}
+
+html {
+    transition: all 0.5s ease-in;
+}
+
+html.escuro {
+    --cor-primaria: #fff;
+    --cor-secundaria: #333;
+}
+
+html.escuro {
+    background-color: #111;
+    color: var(--cor-primaria);
+}
+
+body {
+    font-family: "Heebo", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.alternar {
+    cursor: pointer;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 100px;
+}
+
+.alternar:focus {
+    outline: none;
+}
+
+.container-relogio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.relogio {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.ponteiro {
+    background-color: var(--cor-primaria);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in linear;
+}
+
+.ponteiro.hora {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.ponteiro.minuto {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.ponteiro.segundo {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: #e74c3c;
+}
+
+.ponto-central {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.ponto-central::after {
+    content: "";
+    background-color: var(--cor-primaria);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.hora-atual {
+    font-size: 60px;
+}
+
+.data-atual {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.data-atual .circulo {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+}

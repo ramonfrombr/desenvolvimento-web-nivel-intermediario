@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+        />
+        <link rel="stylesheet" href="estilo.css" />
+        <title>Reprodutor de Música</title>
+    </head>
+    <body>
+        <h1>Reprodutor de Música</h1>
+
+        <div class="container-musica" id="container-musica">
+            <div class="info-musica">
+                <h4 id="titulo"></h4>
+                <div class="container-progresso" id="container-progresso">
+                    <div class="progresso" id="progresso"></div>
+                </div>
+            </div>
+
+            <audio src="musicas/ukulele.mp3" id="audio"></audio>
+
+            <div class="container-imagem">
+                <img src="imagens/ukulele.jpg" alt="capa-musica" id="capa" />
+            </div>
+
+            <div class="navegacao">
+                <button id="anterior" class="btn-acao">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button id="tocar" class="btn-acao btn-acao-grande">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="proximo" class="btn-acao">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
