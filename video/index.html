@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Reprodutor de Vídeo</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/progresso.css" />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <h1>Reprodutor de Vídeo</h1>
+    <video
+      src="videos/01.mp4"
+      id="video"
+      class="tela"
+      poster="imagens/poster.png"
+    ></video>
+    <div class="controles">
+      <button class="botao" id="reproduzir">
+        <i class="fa fa-play fa-2x"></i>
+      </button>
+      <button class="botao" id="pausar">
+        <i class="fa fa-stop fa-2x"></i>
+      </button>
+      <input
+        type="range"
+        id="progresso"
+        class="progresso"
+        min="0"
+        max="100"
+        step="0.1"
+        value="0"
+      />
+      <span class="tempo" id="tempo">00:00</span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

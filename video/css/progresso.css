@@ -1,0 +1,134 @@
+/* SOURCE: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+
+/* Importado de CSS-Tricks: exemplo de slider cross-browser */
+
+/* Reset básico do range */
+input[type="range"] {
+  -webkit-appearance: none; /* Remove o estilo padrão no Chrome/Safari */
+  width: 100%; /* Necessário para Firefox interpretar a largura corretamente */
+  background: transparent; /* Caso contrário fica branco no Chrome */
+}
+
+/* Remove o estilo padrão da "bolinha" (thumb) no WebKit (Chrome, Safari, Edge novo) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/* Remove a borda azul padrão ao focar */
+input[type="range"]:focus {
+  outline: none; /* ⚠️ Em produção, seria bom adicionar um foco personalizado para acessibilidade */
+}
+
+/* Área da "trilha" no IE */
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Esconde a trilha padrão para podermos criar a nossa */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* ---------- THUMB (o botão que arrasta) ---------- */
+
+/* Estilização do thumb no Chrome/Safari/Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove estilo nativo */
+  border: 1px solid #000000; /* Borda preta */
+  height: 36px; /* Altura do botão */
+  width: 16px; /* Largura do botão */
+  border-radius: 3px; /* Bordas arredondadas */
+  background: #ffffff; /* Cor branca */
+  cursor: pointer; /* Cursor "mãozinha" */
+  margin-top: -14px; /* Corrige alinhamento no Chrome */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Sombra 3D */
+}
+
+/* Mesmo estilo do thumb para Firefox */
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* Mesmo estilo do thumb para IE */
+input[type="range"]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* ---------- TRACK (a trilha onde o thumb desliza) ---------- */
+
+/* Estilo da trilha no Chrome/Safari */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px; /* Espessura da trilha */
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Sombra 3D */
+  background: #3071a9; /* Azul padrão */
+  border-radius: 1.3px; /* Cantos levemente arredondados */
+  border: 0.2px solid #010101; /* Borda fina preta */
+}
+
+/* Trilha ao focar no Chrome/Safari */
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #367ebd; /* Azul mais claro */
+}
+
+/* Trilha no Firefox */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+/* Trilha no IE (diferente: precisa usar partes separadas: track, fill-lower, fill-upper) */
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent; /* transparente, será preenchida por fill-lower e fill-upper */
+  border-color: transparent;
+  border-width: 16px 0; /* Cria espaço para o thumb */
+  color: transparent;
+}
+
+/* Parte "abaixo" do thumb (lado esquerdo) no IE */
+input[type="range"]::-ms-fill-lower {
+  background: #2a6495; /* Azul mais escuro */
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* Parte abaixo do thumb no foco (IE) */
+input[type="range"]:focus::-ms-fill-lower {
+  background: #3071a9; /* Azul mais claro */
+}
+
+/* Parte "acima" do thumb (lado direito) no IE */
+input[type="range"]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* Parte acima do thumb no foco (IE) */
+input[type="range"]:focus::-ms-fill-upper {
+  background: #367ebd; /* Azul mais claro */
+}

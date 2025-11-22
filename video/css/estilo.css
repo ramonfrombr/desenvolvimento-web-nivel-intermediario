@@ -1,0 +1,90 @@
+/* Importa a fonte "Questrial" do Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+/* Define que todas as caixas (elementos) usem border-box,
+   ou seja, o padding e a borda são incluídos no tamanho total */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilização do corpo da página */
+body {
+  font-family: "Questrial", sans-serif; /* Fonte padrão */
+  background-color: #666; /* Fundo cinza */
+  display: flex; /* Ativa o flexbox */
+  flex-direction: column; /* Coloca os elementos em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  max-height: 100vh; /* Limita a altura máxima à altura da tela */
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Estilização dos títulos */
+h1 {
+  color: #fff; /* Texto branco */
+}
+
+/* Área principal da tela (ex.: player de vídeo/áudio) */
+.tela {
+  cursor: pointer; /* Cursor vira "mãozinha" */
+  width: 60%; /* Ocupa 60% da largura disponível */
+  background-color: #000 !important; /* Fundo preto (forçado com !important) */
+  border-top-left-radius: 10px; /* Bordas superiores arredondadas */
+  border-top-right-radius: 10px;
+}
+
+/* Área dos controles do player */
+.controles {
+  background: #333; /* Fundo cinza escuro */
+  color: #fff; /* Texto branco */
+  width: 60%; /* Largura igual à tela */
+  border-bottom-left-radius: 10px; /* Bordas inferiores arredondadas */
+  border-bottom-right-radius: 10px;
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza conteúdo no eixo principal */
+  align-items: center; /* Centraliza no eixo cruzado */
+  padding: 10px; /* Espaçamento interno */
+}
+
+/* Botões dentro da área de controles */
+.controles .botao {
+  border: 0; /* Remove borda padrão */
+  background: transparent; /* Fundo transparente */
+  cursor: pointer; /* Cursor em forma de mãozinha */
+}
+
+/* Ícone "play" (verde) */
+.controles .fa-play {
+  color: #28a745;
+}
+
+/* Ícone "stop" (vermelho) */
+.controles .fa-stop {
+  color: #dc3545;
+}
+
+/* Ícone "pause" (branco) */
+.controles .fa-pause {
+  color: #fff;
+}
+
+/* Exibição do tempo de reprodução */
+.controles .tempo {
+  color: #fff; /* Branco */
+  font-weight: bold; /* Negrito */
+  margin-left: 10px; /* Espaço à esquerda */
+}
+
+/* Remove a borda de foco padrão dos botões */
+.botao:focus {
+  outline: 0;
+}
+
+/* Responsividade: em telas menores que 800px
+   a largura da tela e dos controles aumenta para 90% */
+@media (max-width: 800px) {
+  .tela,
+  .controles {
+    width: 90%;
+  }
+}
