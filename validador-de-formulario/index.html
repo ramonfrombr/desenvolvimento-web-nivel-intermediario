@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="estilo.css" />
+        <title>Validador de Formulário</title>
+    </head>
+    <body>
+        <div class="container">
+            <form id="formulario" class="formulario">
+                <h2>Cadastre-se Conosco</h2>
+
+                <div class="controle-formulario">
+                    <label for="usuario">Nome de Usuário</label>
+                    <input
+                        type="text"
+                        id="usuario"
+                        placeholder="Digite o nome de usuário"
+                    />
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <div class="controle-formulario">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="Digite o e-mail"
+                    />
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <div class="controle-formulario">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite a senha"
+                    />
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <div class="controle-formulario">
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        placeholder="Digite a senha novamente"
+                    />
+                    <small>Mensagem de erro</small>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

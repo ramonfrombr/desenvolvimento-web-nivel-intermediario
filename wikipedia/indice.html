@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia</title>
+    <!-- Link para o arquivo de estilos CSS. -->
+    <link rel="stylesheet" href="./estilos.css" />
+  </head>
+  <body>
+    <!-- Seção principal da aplicação de busca da Wikipedia. -->
+    <section class="wiki">
+      <!-- Contêiner para o logo, título e formulário de busca. -->
+      <div class="container">
+        <!-- Imagem do logo da Wikipedia. O atributo 'alt' fornece uma descrição para acessibilidade. -->
+        <img src="./wiki-logo.png" alt="logo da Wikipedia" />
+        <!-- Título principal da seção de busca. -->
+        <h3>Pesquisar na Wikipedia</h3>
+        <!-- Formulário de busca. A classe 'formulario' é usada para estilização. -->
+        <form class="formulario">
+          <!-- Campo de input para o usuário digitar o termo de busca. -->
+          <input type="text" class="input-formulario" placeholder="Pesquisar..."/>
+          <!-- Botão para enviar o formulário e iniciar a busca. -->
+          <button type="submit" class="botao-enviar">Pesquisar</button>
+        </form>
+      </div>
+      <!-- Div onde os resultados da busca serão dinamicamente carregados pelo JavaScript. -->
+      <div class="resultados"></div>
+    </section>
+    <!-- Link para o arquivo JavaScript principal que contém a lógica da aplicação. -->
+    <script src="./aplicacao.js"></script>
+  </body>
+</html>
